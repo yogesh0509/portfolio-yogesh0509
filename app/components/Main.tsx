@@ -3,7 +3,7 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Terminal from './Terminal';
-import { useSidebar } from './SidebarContext';
+import { useSidebar } from '../context/SidebarContext';
 
 export default function Main({ children }: { children: React.ReactNode }) {
     const { minimized } = useSidebar();

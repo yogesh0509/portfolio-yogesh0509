@@ -2,7 +2,7 @@
 
 // components/Terminal.tsx
 import React from 'react';
-import { useSidebar } from './SidebarContext';
+import { useSidebar } from '../context/SidebarContext';
 
 const Terminal: React.FC = () => {
     const { minimized } = useSidebar();
