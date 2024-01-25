@@ -4,7 +4,7 @@
 import React from 'react';
 import FolderDropdown from './FolderDropdown';
 import FileButton from './FileButton';
-import { useSidebar } from './SidebarContext';
+import { useSidebar } from '../context/SidebarContext';
 
 const Sidebar: React.FC = () => {
   const { minimized, toggleMinimized } = useSidebar();
