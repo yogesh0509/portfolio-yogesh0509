@@ -10,8 +10,8 @@ const Sidebar: React.FC = () => {
   const { minimized, toggleMinimized } = useSidebar();
 
   const folders = [
-    { folderName: 'src', files: ['index.js', 'app.js', 'utils.js'] },
-    { folderName: 'components', files: ['Header.js', 'Sidebar.js', 'FileButton.js', 'FolderDropdown.js'] },
+    { folderName: 'Hackathons', files: ['chainlinkHackathon.sol', 'ETHForAll.sol'] },
+    { folderName: 'Projects', files: ['web3-dream11.sol', '1inch-app-defi.js', 'TakeYourQuiz.js'] },
     // Add more folders as needed
   ];
 
@@ -25,9 +25,8 @@ const Sidebar: React.FC = () => {
           {folders.map((folder) => (
             <FolderDropdown key={folder.folderName} folderName={folder.folderName} files={folder.files} />
           ))}
-          <FileButton fileName="index.html" />
-          <FileButton fileName="styles.css" />
-          <FileButton fileName="app.js" />
+          <FileButton fileName="package.json" nested={false}/>
+          <FileButton fileName="README.md" nested={false}/>
           {/* Add more root files as needed */}
         </>
       )}

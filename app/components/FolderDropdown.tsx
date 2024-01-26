@@ -22,7 +22,7 @@ const FolderDropdown: React.FC<{ folderName: string; files?: string[]; nested?: 
       {isOpen && (
         <div className={`pl-2 ${nested ? 'ml-4' : ''}`}>
           {files && files.map((fileName) => (
-            <FileButton key={fileName} fileName={fileName} nested={nested} />
+            <FileButton key={fileName} fileName={fileName} nested={true} folderName={folderName}/>
           ))}
           {folders && folders.map((nestedFolder) => (
             <FolderDropdown
