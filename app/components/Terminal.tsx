@@ -20,6 +20,13 @@ const Terminal: React.FC = () => {
     setUserInput(e.target.value);
   };
 
+  const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if(e.key === 'ArrowUp'){
+      console.log("H")
+      // commands[commands.length-1]
+    }
+  }
+
   const handleEnterPress = async(e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const returnOutput = await ValiateCommands(userInput, finalPath)
@@ -33,7 +40,7 @@ const Terminal: React.FC = () => {
   return (
     <div
       id="terminal"
-      className={`flex-shrink-0 fixed bottom-0 w-full h-2/5 bg-black text-white border border-gray-700 relative overflow-y-auto`}
+      className={`flex-shrink-0 fixed bottom-0 w-full h-2/5 py-4 pl-2 bg-black text-white border border-gray-700 relative overflow-y-auto`}
     >
       <div className="resize-handle absolute top-0 left-0 w-full h-2 cursor-row-resize bg-gray-700"></div>
       {commands.map((command, index) => (
@@ -44,6 +51,7 @@ const Terminal: React.FC = () => {
           <div key={(index+3)*100}>
             <TypingText text={output[index]} />
           </div>
+          <br/>
         </>
       ))}
 
@@ -53,6 +61,7 @@ const Terminal: React.FC = () => {
           type="text"
           value={userInput}
           onChange={handleInputChange}
+          onKeyUp={handleKeyUp} 
           onKeyPress={handleEnterPress}
           className="flex-grow bg-transparent border-none outline-none text-white"
           placeholder="Type your command..."

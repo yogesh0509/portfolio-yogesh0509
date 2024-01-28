@@ -14,7 +14,7 @@ const TypingText: React.FC<{ text: string }> = ({ text }) => {
       if (index === text.length-1) {
         clearInterval(typingInterval);
       }
-    }, 100); // Adjust the typing speed (milliseconds per character)
+    }, 10);
 
     return () => {
       clearInterval(typingInterval);
