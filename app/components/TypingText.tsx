@@ -1,7 +1,8 @@
-// TypingTextComponent.jsx
+'use client'
+
 import React, { useEffect, useState } from 'react';
 
-const TypingText: React.FC<{text: string}> = ({ text }) => {
+const TypingText: React.FC<{ text: string }> = ({ text }) => {
   const [displayedText, setDisplayedText] = useState('');
 
   useEffect(() => {
@@ -10,7 +11,7 @@ const TypingText: React.FC<{text: string}> = ({ text }) => {
       setDisplayedText((prevText) => prevText + text[index]);
       index++;
 
-      if (index === text.length) {
+      if (index === text.length-1) {
         clearInterval(typingInterval);
       }
     }, 100); // Adjust the typing speed (milliseconds per character)
@@ -19,7 +20,6 @@ const TypingText: React.FC<{text: string}> = ({ text }) => {
       clearInterval(typingInterval);
     };
   }, [text]);
-
   return <div>{displayedText}</div>;
 };
 
