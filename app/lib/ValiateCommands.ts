@@ -13,7 +13,8 @@ interface Values {
 
 const values: Values = {
     "web3_dream11": {
-        "about()": "Hello the name of the project is web3 dream11."
+        "about()": "Fantasy sports have witnessed an astounding rise in India, attracting millions of players to various platforms. However, persistent issues such as data privacy, insider trading, and a lack of transparency prompted the development of web3-DREAM11. This project utilizes blockchain technology, oracles, and NFTs to elevate the security, transparency, and fairness of fantasy sports experiences. It is a platform where cricket teams and franchises can buy and sell players for their respective leagues or tournaments. The marketplace usually operates online and facilitates the bidding and trading process for cricket players.",
+        "getLanguageUsed()": `solidity javascript react`
     }
 }
 
@@ -34,7 +35,7 @@ const regexHandlers: RegexHandler[] = [
                     return "Command not found!!"
                 }
             }
-            else{
+            else {
                 return "Invalid Command!!"
             }
         },

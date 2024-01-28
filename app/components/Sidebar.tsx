@@ -16,7 +16,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className={`w-1/5 ${minimized ? 'w-16' : ''} transition-all overflow-auto text-white border border-gray-700`}>
+    <div className={`w-1/5 ${minimized ? 'w-8' : ''} transition-all overflow-auto text-white border border-gray-700`}>
       <button className="text-white" onClick={toggleMinimized}>
         {minimized ? '▶' : '◁'}
       </button>
