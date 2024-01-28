@@ -15,9 +15,10 @@ const FileButton: React.FC<{ fileName: string; nested: boolean, folderName?: str
     >
       <Image
         src={`/language/${lang}.png`}
-        width={20}
-        height={20}
+        width={40}
+        height={40}
         alt={fileName}
+        className='px-2'
       />  
       <span>{fileName}</span>
     </Link>

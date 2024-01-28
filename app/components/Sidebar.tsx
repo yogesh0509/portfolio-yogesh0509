@@ -11,7 +11,7 @@ const Sidebar: React.FC = () => {
 
   const folders = [
     { folderName: 'Hackathons', files: ['chainlinkHackathon.sol', 'ETHForAll.sol'] },
-    { folderName: 'Projects', files: ['web3-dream11.sol', '1inch-app-defi.js', 'TakeYourQuiz.js'] },
+    { folderName: 'Projects', files: ['web3-dream11.sol', '1inch-app-defi.tsx', 'TakeYourQuiz.js'] },
     // Add more folders as needed
   ];
 
@@ -25,7 +25,6 @@ const Sidebar: React.FC = () => {
           {folders.map((folder) => (
             <FolderDropdown key={folder.folderName} folderName={folder.folderName} files={folder.files} />
           ))}
-          <FileButton fileName="package.json" nested={false}/>
           <FileButton fileName="README.md" nested={false}/>
           {/* Add more root files as needed */}
         </>
