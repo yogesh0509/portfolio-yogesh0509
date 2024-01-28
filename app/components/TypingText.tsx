@@ -11,7 +11,7 @@ const TypingText: React.FC<{ text: string }> = ({ text }) => {
       setDisplayedText((prevText) => prevText + text[index]);
       index++;
 
-      if (index === text.length-1) {
+      if (index === text.length - 1) {
         clearInterval(typingInterval);
       }
     }, 10);
@@ -20,7 +20,7 @@ const TypingText: React.FC<{ text: string }> = ({ text }) => {
       clearInterval(typingInterval);
     };
   }, [text]);
-  return <div>{displayedText}</div>;
+  return <div style={{ whiteSpace: 'pre-line' }}>{displayedText}</div>;
 };
 
 export default TypingText;

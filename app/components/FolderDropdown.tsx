@@ -17,7 +17,7 @@ const FolderDropdown: React.FC<{ folderName: string; files?: string[]; nested?: 
         className={`flex items-center text-white cursor-pointer p-1 ${nested ? 'ml-4' : 'ml-2'} hover:bg-gray-600`}
         onClick={toggleDropdown}
       >
-        {isOpen ? '◁' : '▶'} {folderName}
+        {isOpen ? '▼' : '▶'} {folderName}
       </div>
       {isOpen && (
         <div className={`pl-2 ${nested ? 'ml-4' : ''}`}>
