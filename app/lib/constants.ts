@@ -24,7 +24,7 @@ contract web3_dream11 {
     function getLanguageUsed() external returns(string[] memory){}
     function about() external {}
     function liveProject() external {}
-    // To run a function type this command "npx hardhat scripts/<functionName>"
+    // To run a function type this command "npx hardhat run scripts/<functionName>"
 }`;
 
 export const code = (fileName: string)=>{
