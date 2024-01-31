@@ -11,14 +11,14 @@ const Sidebar: React.FC = () => {
 
   const folders = [
     { folderName: 'Hackathons', files: ['chainlinkHackathon.sol', 'ETHForAll.sol'] },
-    { folderName: 'Projects', files: ['web3-dream11.sol', '1inch-app-defi.tsx', 'TakeYourQuiz.js'] },
+    { folderName: 'Projects', files: ['1inch_api_defi.jsx', 'CrossChainHub.sol', 'medical_consultancy.js', 'TakeYourQuiz.js', 'web3_dream11.sol'] },
     // Add more folders as needed
   ];
 
   return (
-    <div className={`w-1/5 ${minimized ? 'w-8' : ''} transition-all overflow-auto text-white border border-gray-700`}>
-      <button className="text-white" onClick={toggleMinimized}>
-        {minimized ? '▶' : '◁'}
+    <div className={`w-1/5 ${minimized ? 'w-8 text-center' : 'pl-2'} py-2 transition-all overflow-auto text-white bg-zinc-900`}>
+      <button className="text-white mx-auto" onClick={toggleMinimized}>
+        {minimized ? '☰' : '☰'}
       </button>
       {!minimized && (
         <>
