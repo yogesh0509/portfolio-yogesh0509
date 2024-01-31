@@ -11,7 +11,7 @@ const Sidebar: React.FC = () => {
 
   const folders = [
     { folderName: 'Hackathons', files: ['chainlinkHackathon.sol', 'ETHForAll.sol'] },
-    { folderName: 'Projects', files: ['1inch_api_defi.jsx', 'CrossChainHub.sol', 'medical_consultancy.js', 'TakeYourQuiz.js', 'web3_dream11.sol'] },
+    { folderName: 'Projects', files: ['1inch_api_defi.jsx', 'CrossChainHub.ts', 'TakeYourQuiz.js', 'web3_dream11.sol'] },
     // Add more folders as needed
   ];
 
