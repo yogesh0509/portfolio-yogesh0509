@@ -22,6 +22,11 @@ const values: Values = {
         "TechUsed()": `javascript\npug`,
         "link()": `https://github.com/yogesh0509/1inch-API-defi`
     },
+    "CrossChainHub": {
+        "about()": "An API service that enables users to call smart contracts residing on different chains. This strategic integration streamlines cross-chain smart contract interaction, allowing us to seamlessly interact with diverse blockchain architectures.",
+        "TechUsed()": `typescript\nsolidity\n`,
+        "link()": `https://github.com/yogesh0509/CrossChain-Hub`
+    },
     "TakeYourQuiz": {
         "about()": "A customizable quiz website is an online platform that enables users to create and administer custom quizzes using their own questions and answers. With this particular website, users can easily create a quiz by uploading a PDF file containing the questions and answer choices.",
         "TechUsed()": `javascript\npug`,
@@ -37,6 +42,7 @@ const values: Values = {
 const regexHandlers: RegExp[] = [
     /^npx hardhat run scripts\/(\w+) --args "(\w+\(.*\))"$/,
     /^npm (\w+).js\/(\w+\(.*\))$/,
+    /^npm (\w+).ts\/(\w+\(.*\))$/,
     /^npm run dev (\w+)\/(\w+\(.*\))$/
 ];
 
