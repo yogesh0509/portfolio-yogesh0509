@@ -11,7 +11,7 @@ export default function Page({ params }: { params: { file: string[] } }) {
         height: '100%',
         margin: '0px',
         padding: '0px',
-        backgroundColor: 'black'
+        backgroundColor: 'rgb(9 9 11)'
     };
     const fileName: string[] = params.file[params.file.length-1].split('.')
     const codeFile: string = code(fileName[0])

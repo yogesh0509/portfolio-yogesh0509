@@ -12,7 +12,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
         <div className="flex h-screen overflow-hidden">
             <Sidebar />
             <div className="flex-1 flex flex-col">
-                <main className={`flex-1 p-4 overflow-auto ${minimized ? 'overflow-x-auto' : ''} transition-all text-white`}>
+                <main className={`flex-1 p-4 overflow-auto ${minimized ? 'overflow-x-auto' : ''} transition-all text-white bg-zinc-950`}>
                     {children}
                 </main>
                 <Terminal />
