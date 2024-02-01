@@ -5,6 +5,27 @@ import { usePathname } from 'next/navigation'
 import { ValiateCommands } from '../lib/ValiateCommands';
 import TypingText from "./TypingText"
 
+interface Link {
+  github: string;
+  live?: string;
+  hackathon?: string;
+}
+
+interface Technology {
+  framework: string[];
+  language: string[];
+}
+
+type OutputItem = string | Link | Technology;
+
+const isLink = (item: OutputItem): item is Link => {
+  return typeof item !== 'string' && 'github' in item;
+};
+
+const isTechnology = (item: OutputItem): item is Technology => {
+  return typeof item !== 'string' && 'framework' in item && 'language' in item;
+};
+
 const Terminal: React.FC = () => {
   const pathname = usePathname()
   const lastSlashIndex = pathname.lastIndexOf("/");
@@ -14,7 +35,9 @@ const Terminal: React.FC = () => {
   const [userInput, setUserInput] = useState<string>('');
   const [commands, setCommands] = useState<string[]>([]);
   const [paths, setPaths] = useState<string[]>([]);
-  const [output, setOutput] = useState<string[]>([]);
+  const [output, setOutput] = useState<OutputItem[]>([]);
+
+  // const combinedData = [...commands, ...output];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
@@ -29,18 +52,20 @@ const Terminal: React.FC = () => {
 
   const handleEnterPress = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      const returnOutput = JSON.parse(await ValiateCommands(userInput, finalPath)).message
+      const returnOutput: Link | Technology | string = JSON.parse(await ValiateCommands(userInput, finalPath)).message
       console.log(returnOutput)
-      setOutput((prevOutput) => [...prevOutput, returnOutput])
+      if (typeof returnOutput === 'string' || isLink(returnOutput) || isTechnology(returnOutput)) {
+        setOutput((prevOutput) => [...prevOutput, returnOutput]);
+      } 
       setCommands((prevCommands) => [...prevCommands, userInput]);
       setPaths((prevPaths) => [...prevPaths, finalPath]);
       setUserInput('');
     }
   };
 
-  const handleClick = (urlString: string) => {
-    window.open(urlString, '_blank');
-  };
+  // const handleClick = (urlString: string) => {
+  //   window.open(urlString, '_blank');
+  // };
 
   return (
     <div
@@ -53,15 +78,60 @@ const Terminal: React.FC = () => {
           <div key={index}>
             <span>$ yogesh0509{paths[index]}&gt;</span> {command}
           </div>
-          <div
-            key={(index + 3) * 100}
-            onClick={output[index].startsWith('http') ? handleClick.bind(null, output[index]) : undefined}
-            style={output[index].startsWith('http') ? {
-              textDecoration: 'underline',
-              cursor: 'pointer',
-            } : {}}
-          >
-            <TypingText text={output[index]} />
+          {console.log(output[index])}
+          <div key={index+3*100}>
+            {typeof output[index] === 'string' ? (
+              <TypingText text={output[index]} />
+            ) : isLink(output[index]) ? (
+              <>
+                <a
+                  href={output[index].github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'underline', color: 'blue' }}
+                >
+                  <TypingText text="GitHub" />
+                </a>
+                {output[index].hackathon && (
+                  <a
+                    href={output[index].hackathon}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'underline', color: 'blue' }}
+                  >
+                    <TypingText text="Hackathon" />
+                  </a>
+                )}
+                {output[index].live && (
+                  <a
+                    href={output[index].live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'underline', color: 'blue' }}
+                  >
+                    <TypingText text="Live" />
+                  </a>
+                )}
+              </>
+            ) : isTechnology(output[index]) ? (
+              <div>
+                <div>Language:</div>
+                {output[index].language.map((ele, i) => (
+                  <div key={i}>
+                    <TypingText text={`--   ${ele}`} />
+                  </div>
+                ))}
+                <br/>
+                <div>Framework/Library:</div>
+                {output[index].framework.map((ele, i) => (
+                  <div key={i}>
+                    <TypingText text={`--   ${ele}`} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
           <br />
         </>
