@@ -19,7 +19,7 @@ interface Terminal {
 
 const callback: Terminal = {
     "chainlinkHackathon": {
-        "about()": "A project that rewards rainforest owners with tokens for preserving their land, helping fight climate change and protect biodiversity.Tokens representing one ton of fixed carbon dioxide, given to registered rainforest owners for conservation efforts.",
+        "about()": "A  project that rewards rainforest owners with tokens for preserving their land, helping fight climate change and protect biodiversity.Tokens representing one ton of fixed carbon dioxide, given to registered rainforest owners for conservation efforts.",
         "TechUsed()": {
             framework: ["Hardhat", "React.js", "chainlink", "wagmi", "tailwind CSS"],
             language: ["Solidity", "Javascript"]
@@ -31,7 +31,7 @@ const callback: Terminal = {
         }
     },
     "ETHForAll": {
-        "about()": "A DAO (Decentralized Autonomous Organization) can be designed as a society that allows members to buy properties listed on the platform, which in turn grants them voting powers in the proposals of the society. The society aims to be a democratic and decentralized organization, where decisions are made by its members through voting.",
+        "about()": "A  DAO (Decentralized Autonomous Organization) can be designed as a society that allows members to buy properties listed on the platform, which in turn grants them voting powers in the proposals of the society. The society aims to be a democratic and decentralized organization, where decisions are made by its members through voting.",
         "TechUsed()": {
             framework: ["Hardhat", "polygon", "chainlink"],
             language: ["Solidity", "Javascript"]
@@ -42,7 +42,7 @@ const callback: Terminal = {
         }
     },
     "1inch_api_defi": {
-        "about()": "Token swap using 1inch protocol to exchange one cryptocurrency for another without a middleman.",
+        "about()": "T oken swap using 1inch protocol to exchange one cryptocurrency for another without a middleman.",
         "TechUsed()": {
             framework: ["Next.js", "React.js", "ethers.js", "wagmi", "tailwind CSS"],
             language: ["Javascript"]
@@ -53,7 +53,7 @@ const callback: Terminal = {
         }
     },
     "CrossChainHub": {
-        "about()": "An API service that enables users to call smart contracts residing on different chains. This strategic integration streamlines cross-chain smart contract interaction, allowing us to seamlessly interact with diverse blockchain architectures.",
+        "about()": "A n API service that enables users to call smart contracts residing on different chains. This strategic integration streamlines cross-chain smart contract interaction, allowing us to seamlessly interact with diverse blockchain architectures.",
         "TechUsed()": {
             framework: ["React.js", "tailwind CSS", "ethers.js", "node.js", "express.js", "chainlink"],
             language: ["Javascript", "Typescript", "Solidity"]
@@ -63,7 +63,7 @@ const callback: Terminal = {
         }
     },
     "TakeYourQuiz": {
-        "about()": "A customizable quiz website is an online platform that enables users to create and administer custom quizzes using their own questions and answers. With this particular website, users can easily create a quiz by uploading a PDF file containing the questions and answer choices.",
+        "about()": "A  customizable quiz website is an online platform that enables users to create and administer custom quizzes using their own questions and answers. With this particular website, users can easily create a quiz by uploading a PDF file containing the questions and answer choices.",
         "TechUsed()": {
             framework: ["node.js", "express.js", "mongoDB", "aws", "multer"],
             language: ["Javascript", "pug"]
@@ -74,7 +74,7 @@ const callback: Terminal = {
         }
     },
     "web3_dream11": {
-        "about()": "Fantasy sports have witnessed an astounding rise in India, attracting millions of players to various platforms. However, persistent issues such as data privacy, insider trading, and a lack of transparency prompted the development of web3-DREAM11. This project utilizes blockchain technology, oracles, and NFTs to elevate the security, transparency, and fairness of fantasy sports experiences. It is a platform where cricket teams and franchises can buy and sell players for their respective leagues or tournaments. The marketplace usually operates online and facilitates the bidding and trading process for cricket players.",
+        "about()": "F antasy sports have witnessed an astounding rise in India, attracting millions of players to various platforms. However, persistent issues such as data privacy, insider trading, and a lack of transparency prompted the development of web3-DREAM11. This project utilizes blockchain technology, oracles, and NFTs to elevate the security, transparency, and fairness of fantasy sports experiences. It is a platform where cricket teams and franchises can buy and sell players for their respective leagues or tournaments. The marketplace usually operates online and facilitates the bidding and trading process for cricket players.",
         "TechUsed()": {
             framework: ["React.js", "tailwind CSS", "ethers.js", "NEXT.js", "chainlink"],
             language: ["Javascript", "Solidity", "toml"]
@@ -114,5 +114,5 @@ export const ValiateCommands = (command: string, path: string) => {
             return handler(matchResult);
         }
     }
-    return JSON.stringify({ message: "Invalid Command!!" })
+    return JSON.stringify({ message: "I nvalid Command!!" })
 }
