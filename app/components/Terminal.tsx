@@ -81,20 +81,20 @@ const Terminal: React.FC = () => {
           {console.log(output[index])}
           <div key={index+3*100}>
             {typeof output[index] === 'string' ? (
-              <TypingText text={output[index]} />
+              <TypingText text={output[index] as string} />
             ) : isLink(output[index]) ? (
               <>
                 <a
-                  href={output[index].github}
+                  href={(output[index] as Link).github}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ textDecoration: 'underline', color: 'blue' }}
                 >
                   <TypingText text="G itHub" />
                 </a>
-                {output[index].hackathon && (
+                {(output[index] as Link).hackathon && (
                   <a
-                    href={output[index].hackathon}
+                    href={(output[index] as Link).hackathon}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ textDecoration: 'underline', color: 'blue' }}
@@ -102,9 +102,9 @@ const Terminal: React.FC = () => {
                     <TypingText text="H ackathon" />
                   </a>
                 )}
-                {output[index].live && (
+                {(output[index] as Link).live && (
                   <a
-                    href={output[index].live}
+                    href={(output[index] as Link).live}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ textDecoration: 'underline', color: 'blue' }}
@@ -116,14 +116,14 @@ const Terminal: React.FC = () => {
             ) : isTechnology(output[index]) ? (
               <div>
                 <div>Language:</div>
-                {output[index].language.map((ele, i) => (
+                {(output[index] as Technology).language.map((ele, i) => (
                   <div key={i}>
                     <TypingText text={`--   ${ele}`} />
                   </div>
                 ))}
                 <br/>
                 <div>Framework/Library:</div>
-                {output[index].framework.map((ele, i) => (
+                {(output[index] as Technology).framework.map((ele, i) => (
                   <div key={i}>
                     <TypingText text={`--   ${ele}`} />
                   </div>
