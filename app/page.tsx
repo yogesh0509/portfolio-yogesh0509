@@ -12,8 +12,8 @@ export default function Home() {
         >
           <Image
             src={`/github.png`}
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             alt="github"
             className='p-8'
           />
@@ -36,8 +36,8 @@ export default function Home() {
         >
           <Image
             src={`/linkedin.png`}
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             alt="github"
             className='p-8'
           />
@@ -61,8 +61,8 @@ export default function Home() {
         >
           <Image
             src={`/resume.png`}
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             alt="github"
             className='p-8'
           />
@@ -85,8 +85,8 @@ export default function Home() {
         >
           <Image
             src={`/portfolio.png`}
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             alt="github"
             className='p-8'
           />

@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
         <div className="w-full px-3 pt-1 text-xs shadow-2xl bg-[#0d1117] border-l border-[#30363d]">
             <Link href={`/`}>yogesh0509 &gt; </Link>
             {newPaths.map((path, index, array) => (                
-                <Link href={`/${array.slice(0, index + 1).join("/")}`}>{path} &gt; </Link>
+                <Link href={`/${array.slice(0, index + 1).join("/")}`} key={index}>{path} &gt; </Link>
             ))}
         </div>
     );
