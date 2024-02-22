@@ -70,7 +70,7 @@ const Terminal: React.FC = () => {
   return (
     <div
       id="terminal"
-      className={`flex-shrink-0 fixed bottom-0 w-full h-2/5 py-4 pl-6 text-white border-t-4 border-gray-700 relative overflow-y-auto`}
+      className={`flex-shrink-0 cursor-row-resize relative overflow-y-auto w-full h-2/5 py-4 pl-6 border-t-4 border-l border-[#30363d] bg-[#0d1117] text-[#c9d1d9] `}
     >
       {/* <div className="resize-handle absolute top-0 left-0 w-full h-2 cursor-row-resize bg-gray-700"></div> */}
       {commands.map((command, index) => (

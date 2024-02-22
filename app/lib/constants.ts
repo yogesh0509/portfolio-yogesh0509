@@ -108,7 +108,7 @@ export const lang = (extension: string) => {
             return "jsx"
 
         case "ts":
-            return "typescript"  
+            return "typescript"
 
         default:
             return "txt"
