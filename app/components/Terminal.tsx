@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation'
-import { ValiateCommands } from '../lib/ValiateCommands';
+import { project } from '../lib/project';
 import TypingText from "./TypingText"
 
 interface Link {
@@ -52,7 +52,7 @@ const Terminal: React.FC = () => {
 
   const handleEnterPress = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      const returnOutput: Link | Technology | string = JSON.parse(await ValiateCommands(userInput, finalPath)).message
+      const returnOutput: Link | Technology | string = JSON.parse(await project(userInput, finalPath)).message
       console.log(returnOutput)
       if (typeof returnOutput === 'string' || isLink(returnOutput) || isTechnology(returnOutput)) {
         setOutput((prevOutput) => [...prevOutput, returnOutput]);
@@ -70,9 +70,9 @@ const Terminal: React.FC = () => {
   return (
     <div
       id="terminal"
-      className={`flex-shrink-0 relative overflow-y-auto w-full h-1/5 md:h-2/5 py-2 pl-2 md:pl-4 border-t-4 border-l border-[#30363d] bg-[#0d1117] text-[#c9d1d9]`}
+      className={`flex-shrink-0 relative overflow-y-auto w-full h-1/5 md:h-2/5 pb-2 pl-2 md:pl-4 border-t-4 border-l border-[#30363d] bg-[#0d1117] text-[#c9d1d9]`}
     >
-      <div className="flex cursor-pointer text-xs pb-6 text-[#95a1ad]">
+      <div className="flex cursor-pointer text-xs pt-2 pb-6 bg-[#0d1117] text-[#95a1ad] sticky top-0 z-10">
         <div className="mr-4">PROBLEMS</div>
         <div className="mr-4">OUTPUT</div>
         <div className="mr-4 underline underline-offset-8 text-[#c5d1db]">TERMINAL</div>

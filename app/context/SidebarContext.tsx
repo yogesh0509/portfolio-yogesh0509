@@ -19,7 +19,7 @@ interface SidebarProviderProps {
 }
 
 export const SidebarProvider: React.FC<SidebarProviderProps> = ({ children }) => {
-  const [minimized, setMinimized] = useState(false);
+  const [minimized, setMinimized] = useState(true);
   const [drawer, setDrawer] = useState(false);
   const [isDrawer, handleDrawer] = useState(false);
 

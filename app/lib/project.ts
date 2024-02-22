@@ -42,38 +42,38 @@ const callback: Terminal = {
         }
     },
     "1inch_api_defi": {
-        "about()": "T oken swap using 1inch protocol to exchange one cryptocurrency for another without a middleman.",
-        "TechUsed()": {
+        "about": "T oken swap using 1inch protocol to exchange one cryptocurrency for another without a middleman.",
+        "TechUsed": {
             framework: ["Next.js", "React.js", "ethers.js", "wagmi", "tailwind CSS"],
             language: ["Javascript"]
         },
-        "link()": {
+        "link": {
             github: "https://github.com/yogesh0509/1inch-API-defi",
             live: "https://dzap-task1.vercel.app"
         }
     },
     "CrossChainHub": {
-        "about()": "A n API service that enables users to call smart contracts residing on different chains. This strategic integration streamlines cross-chain smart contract interaction, allowing us to seamlessly interact with diverse blockchain architectures.",
-        "TechUsed()": {
+        "about": "A n API service that enables users to call smart contracts residing on different chains. This strategic integration streamlines cross-chain smart contract interaction, allowing us to seamlessly interact with diverse blockchain architectures.",
+        "TechUsed": {
             framework: ["React.js", "tailwind CSS", "ethers.js", "node.js", "express.js", "chainlink"],
             language: ["Javascript", "Typescript", "Solidity"]
         },
-        "link()": {
+        "link": {
             github: "https://github.com/yogesh0509/CrossChain-Hub"
         }
     },
     "TakeYourQuiz": {
-        "about()": "A  customizable quiz website is an online platform that enables users to create and administer custom quizzes using their own questions and answers. With this particular website, users can easily create a quiz by uploading a PDF file containing the questions and answer choices.",
-        "TechUsed()": {
+        "about": "A  customizable quiz website is an online platform that enables users to create and administer custom quizzes using their own questions and answers. With this particular website, users can easily create a quiz by uploading a PDF file containing the questions and answer choices.",
+        "TechUsed": {
             framework: ["node.js", "express.js", "mongoDB", "aws", "multer"],
             language: ["Javascript", "pug"]
         },
-        "link()": {
+        "link": {
             github: "https://github.com/yogesh0509/TakeYourQuiz",
             live: "https://takeyourquiz.onrender.com/"
         }
     },
-    "web3_dream11": {
+    "Web3Dream11": {
         "about()": "F antasy sports have witnessed an astounding rise in India, attracting millions of players to various platforms. However, persistent issues such as data privacy, insider trading, and a lack of transparency prompted the development of web3-DREAM11. This project utilizes blockchain technology, oracles, and NFTs to elevate the security, transparency, and fairness of fantasy sports experiences. It is a platform where cricket teams and franchises can buy and sell players for their respective leagues or tournaments. The marketplace usually operates online and facilitates the bidding and trading process for cricket players.",
         "TechUsed()": {
             framework: ["React.js", "tailwind CSS", "ethers.js", "NEXT.js", "chainlink"],
@@ -87,10 +87,8 @@ const callback: Terminal = {
 }
 
 const regexHandlers: RegExp[] = [
-    /^npx hardhat run scripts\/(\w+) --args "(\w+\(.*\))"$/,
-    /^npm (\w+).js\/(\w+\(.*\))$/,
-    /^npm (\w+).ts\/(\w+\(.*\))$/,
-    /^npm run dev (\w+)\/(\w+\(.*\))$/
+    /^npx hardhat run scripts\/(\w+) --args (\w+\(.*\))$/,
+    /^curl http:\/\/localhost:3000\/(\w+)\/(\w+)$/
 ];
 
 const handler = (matchResult: RegExpMatchArray) => {
@@ -102,17 +100,17 @@ const handler = (matchResult: RegExpMatchArray) => {
         })
     }
     else {
-        return JSON.stringify({ message: "Function not found!!" })
+        return JSON.stringify({ message: "F unction or file not found!!" })
     }
 
 }
 
-export const ValiateCommands = (command: string, path: string) => {
+export const project = (command: string, path: string) => {
     for (const pattern of regexHandlers) {
         const matchResult = command.match(pattern);
         if (matchResult) {
             return handler(matchResult);
         }
     }
-    return JSON.stringify({ message: "I nvalid Command!!" })
+    return JSON.stringify({ message: "I nvalid Command!! Please go through the instruction manual or file again to find the appropriate command" })
 }
