@@ -56,7 +56,7 @@ const Terminal: React.FC = () => {
       console.log(returnOutput)
       if (typeof returnOutput === 'string' || isLink(returnOutput) || isTechnology(returnOutput)) {
         setOutput((prevOutput) => [...prevOutput, returnOutput]);
-      } 
+      }
       setCommands((prevCommands) => [...prevCommands, userInput]);
       setPaths((prevPaths) => [...prevPaths, finalPath]);
       setUserInput('');
@@ -70,8 +70,16 @@ const Terminal: React.FC = () => {
   return (
     <div
       id="terminal"
-      className={`flex-shrink-0 cursor-row-resize relative overflow-y-auto w-full h-1/5 md:h-2/5 py-4 pl-2 md:pl-6 border-t-4 border-l border-[#30363d] bg-[#0d1117] text-[#c9d1d9] `}
+      className={`flex-shrink-0 relative overflow-y-auto w-full h-1/5 md:h-2/5 py-2 pl-2 md:pl-4 border-t-4 border-l border-[#30363d] bg-[#0d1117] text-[#c9d1d9]`}
     >
+      <div className="flex cursor-pointer text-xs pb-6 text-[#95a1ad]">
+        <div className="mr-4">PROBLEMS</div>
+        <div className="mr-4">OUTPUT</div>
+        <div className="mr-4 underline underline-offset-8 text-[#c5d1db]">TERMINAL</div>
+        <div className="mr-4">PORTS</div>
+        <div className="mr-4">DEBUG CONSOLE</div>
+      </div>
+
       {/* <div className="resize-handle absolute top-0 left-0 w-full h-2 cursor-row-resize bg-gray-700"></div> */}
       {commands.map((command, index) => (
         <>
@@ -79,7 +87,7 @@ const Terminal: React.FC = () => {
             <span>$ yogesh0509{paths[index]}&gt;</span> {command}
           </div>
           {console.log(output[index])}
-          <div key={index+3*100}>
+          <div key={index + 3 * 100}>
             {typeof output[index] === 'string' ? (
               <TypingText text={output[index] as string} />
             ) : isLink(output[index]) ? (
@@ -121,7 +129,7 @@ const Terminal: React.FC = () => {
                     <TypingText text={`--   ${ele}`} />
                   </div>
                 ))}
-                <br/>
+                <br />
                 <div>Framework/Library:</div>
                 {(output[index] as Technology).framework.map((ele, i) => (
                   <div key={i}>
@@ -145,7 +153,7 @@ const Terminal: React.FC = () => {
           onChange={handleInputChange}
           onKeyUp={handleKeyUp}
           onKeyPress={handleEnterPress}
-          className="flex-grow bg-transparent border-none outline-none text-white"
+          className="flex-grow bg-transparent border-none outline-none text-[#95a1ad]"
           placeholder="Type your command..."
         />
       </div>

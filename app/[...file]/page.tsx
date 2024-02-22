@@ -4,8 +4,6 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { code, lang } from '../lib/constants';
 import Readme from '../components/Readme';
 
-// coldarkDark
-
 export default function Page({ params }: { params: { file: string[] } }) {
     const customStyles = {
         margin: '0px',
@@ -19,7 +17,7 @@ export default function Page({ params }: { params: { file: string[] } }) {
     return fileName[1] === "md" ? (
         <Readme />
       ) : (
-        <SyntaxHighlighter customStyle={customStyles} language={language} style={coldarkDark}>
+        <SyntaxHighlighter customStyle={customStyles} language={language} style={coldarkDark} showLineNumbers={true}>
           {codeFile}
         </SyntaxHighlighter>
       );

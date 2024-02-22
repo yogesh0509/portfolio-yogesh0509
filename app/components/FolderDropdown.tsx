@@ -1,6 +1,5 @@
 'use client'
 
-// components/FolderDropdown.tsx
 import React, { useState } from 'react';
 import FileButton from './FileButton';
 
@@ -14,7 +13,7 @@ const FolderDropdown: React.FC<{ folderName: string; files?: string[]; nested?: 
   return (
     <div>
       <div
-        className={`flex items-center text-white cursor-pointer p-1 ${nested ? 'ml-4' : 'ml-2'} hover:bg-gray-600`}
+        className={`flex items-center cursor-pointer p-1 ${nested ? 'ml-4' : 'ml-2'} hover:bg-gray-800`}
         onClick={toggleDropdown}
       >
         {isOpen ? '▼' : '▶'} {folderName}

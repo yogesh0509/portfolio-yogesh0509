@@ -11,7 +11,7 @@ const FileButton: React.FC<{ fileName: string; nested: boolean, folderName?: str
   return (
     <Link
       href={nested ? `/${folderName}/${fileName}` : `/${fileName}`}
-      className={`flex items-center text-white cursor-pointer p-1 ${marginClass} hover:bg-gray-600`}
+      className={`flex items-center cursor-pointer p-1 ${marginClass} hover:bg-gray-800`}
     >
       <Image
         src={`/language/${lang}.png`}
