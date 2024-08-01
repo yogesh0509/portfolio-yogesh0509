@@ -29,8 +29,7 @@ const isTechnology = (item: OutputItem): item is Technology => {
 const Terminal: React.FC = () => {
   const pathname = usePathname()
   const lastSlashIndex = pathname.lastIndexOf("/");
-  const stringWithoutAfterLastSlash = pathname.substring(0, lastSlashIndex + 1);
-  const finalPath = stringWithoutAfterLastSlash.replace(/\//g, "\\");
+  const finalPath = pathname.substring(0, lastSlashIndex);
 
   const [userInput, setUserInput] = useState<string>('');
   const [commands, setCommands] = useState<string[]>([]);
@@ -72,10 +71,10 @@ const Terminal: React.FC = () => {
       id="terminal"
       className={`flex-shrink-0 relative overflow-y-auto w-full h-1/5 md:h-2/5 pb-2 pl-2 md:pl-4 border-t-4 border-l border-[#30363d] bg-[#0d1117] text-[#c9d1d9]`}
     >
-      <div className="flex cursor-pointer text-xs pt-2 pb-6 bg-[#0d1117] text-[#95a1ad] sticky top-0 z-10">
+      <div className="flex text-xs pt-2 pb-6 bg-[#0d1117] text-[#95a1ad] sticky top-0 z-10">
         <div className="mr-4">PROBLEMS</div>
         <div className="mr-4">OUTPUT</div>
-        <div className="mr-4 underline underline-offset-8 text-[#c5d1db]">TERMINAL</div>
+        <div className="mr-4 cursor-pointer underline underline-offset-8 text-[#c5d1db]">TERMINAL</div>
         <div className="mr-4">PORTS</div>
         <div className="mr-4">DEBUG CONSOLE</div>
       </div>
@@ -84,7 +83,7 @@ const Terminal: React.FC = () => {
       {commands.map((command, index) => (
         <>
           <div key={index}>
-            <span>$ yogesh0509{paths[index]}&gt;</span> {command}
+            <span className='text-[#4169E1]'>o yogesh0509:~ {paths[index]}$</span> {command}
           </div>
           {console.log(output[index])}
           <div key={index + 3 * 100}>
@@ -146,7 +145,7 @@ const Terminal: React.FC = () => {
       ))}
 
       <div className="flex items-center">
-        <div className="mr-2 whitespace-nowrap">$ yogesh0509{finalPath}&gt;</div>
+        <div className="mr-2 whitespace-nowrap text-[#4169E1]">o yogesh0509:~ {finalPath}$ </div>
         <input
           type="text"
           value={userInput}

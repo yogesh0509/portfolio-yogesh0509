@@ -1,106 +1,35 @@
-import Image from "next/image";
+import CodeDisplay from './components/CopyCode';
 
 export default function Home() {
   return (
-    <main className="flex justify-center p-4">
-      <div className="grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://github.com/yogesh0509"
-          className="group rounded-lg border border-transparent px-7 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src={`/github.png`}
-            width={300}
-            height={300}
-            alt="github"
-            className='p-8'
-          />
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            GitHub{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find my GitHub profile which stores all the repositories in which I have worked.
-          </p>
-        </a>
+    <div className="p-5">
+      <div className="container mx-auto">
+        <h1 className="text-4xl font-bold mb-4">Welcome to my Portfolio!!<hr className='border-gray-500' /> </h1>
+        <p className="mb-8">
+          👋 Hi there! I'm Yogesh Agrawal, a passionate developer specializing in Information Science and Engineering. This portfolio is designed to look and feel like a VS Code environment, making it intuitive for developers and tech enthusiasts. Here's a quick guide on how to navigate through my projects and learn more about me.
+        </p>
+        <h2 className="text-2xl font-bold mb-4">Navigation Guide <hr className='border-gray-500' /> </h2>
+        <ul className="list-disc pl-6 mb-8">
+          <li>🗂️ <strong>File Explorer:</strong> On the left, you'll find a sidebar that mimics the VS Code file explorer. Each file represents a different project or section of my portfolio.</li>
+          <li>📁 <strong>Projects Folder:</strong> Inside the "Projects" folder, you'll find individual files for each of my notable projects. Click on any file to open it and see detailed information.</li>
+          <li>📄 <strong>Readme:</strong> This section provides an overview of who I am, my skills, qualifications, and a summary of my journey in tech.</li>
+          <li>📜 <strong>Education:</strong> Check out the "Education" section to learn about my academic background and ongoing studies.</li>
+          <li>💬 <strong>Contact:</strong> Want to reach out? Head to the "Contact" file to find ways to get in touch with me.</li>
+        </ul>
 
-        <a
-          href="https://www.linkedin.com/in/yogesh0509/"
-          className="group rounded-lg border border-transparent px-7 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src={`/linkedin.png`}
-            width={300}
-            height={300}
-            alt="github"
-            className='p-8'
-          />
+        <CodeDisplay codeString={'curl http://localhost:3000/TakeYourQuiz/about\ncurl http://localhost:3000/TakeYourQuiz/TechUsed\ncurl http://localhost:3000/TakeYourQuiz/link'} language="jsx" /><br />
 
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            LinkedIn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Visit my LinkedIn profile to connect with me.
-          </p>
-        </a>
+        <h2 className="text-2xl font-bold mb-4">Quick Tips <hr className='border-gray-500' /> </h2>
+        <ul className="list-disc pl-6 mb-8">
+          <li>🔍 <strong>Search:</strong> Use the search bar at the top to quickly find specific projects or keywords.</li>
+          <li>🖱️ <strong>Click to Expand:</strong> Click on any file or folder in the sidebar to expand and view its contents.</li>
+          <li>🔗 <strong>External Links:</strong> Some files may contain links to live demos or GitHub repositories. Feel free to explore!</li>
+        </ul>
 
-        <a
-          href="https://drive.google.com/file/d/1MuPnWQruBK_T1c1OJ_s0qMPVCY9ZoRac/view?usp=sharing"
-          className="group rounded-lg border border-transparent px-7 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src={`/resume.png`}
-            width={300}
-            height={300}
-            alt="github"
-            className='p-8'
-          />
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Resume{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Check out my professional resume
-          </p>
-        </a>
-
-        <a
-          href="./"
-          className="group rounded-lg border border-transparent px-7 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src={`/portfolio.png`}
-            width={300}
-            height={300}
-            alt="github"
-            className='p-8'
-          />
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Portfolio{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Link to visit and explore my portfolio website.
-          </p>
-        </a>
+        <p className="mb-8">
+          I hope you enjoy exploring my portfolio. If you have any feedback or questions, don't hesitate to reach out. Happy browsing!
+        </p>
       </div>
-    </main>
+    </div>
   );
 }
