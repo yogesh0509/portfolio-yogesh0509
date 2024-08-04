@@ -1,5 +1,7 @@
 'use client'
 
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import React, { useState } from 'react';
 import FileButton from './FileButton';
 
@@ -16,7 +18,7 @@ const FolderDropdown: React.FC<{ folderName: string; files?: string[]; nested?: 
         className={`flex items-center cursor-pointer p-1 ${nested ? 'ml-4' : 'ml-2'} hover:bg-gray-800`}
         onClick={toggleDropdown}
       >
-        {isOpen ? '▼' : '▶'} {folderName}
+        {isOpen ? <MdOutlineKeyboardArrowDown/> : <MdOutlineKeyboardArrowRight/> }<pre> </pre>{folderName}
       </div>
       {isOpen && (
         <div className={`pl-2 ${nested ? 'ml-4' : ''}`}>

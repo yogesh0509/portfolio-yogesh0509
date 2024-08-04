@@ -40,7 +40,10 @@ const handler = (matchResult: RegExpMatchArray) => {
 }
 
 
-export const project = async (command: string, path: string) => {
+export const project = async (command: string) => {
+    if (command.startsWith("cd ")) {
+        return {message: "  "}
+    }
     for (const pattern of regexHandlers) {
         const matchResult = command.match(pattern);
         if (matchResult) {
