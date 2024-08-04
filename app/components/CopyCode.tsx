@@ -16,7 +16,6 @@ const CodeDisplay: React.FC<CodeDisplayProps> = ({ codeString, language }) => {
     return (
         <div className="relative bg-black rounded-lg overflow-hidden shadow-lg">
             <div className="flex justify-between items-center bg-gray-900 px-2 py-1">
-                <span className='ml-2'>{language}</span>
                 <CopyToClipboard text={codeString} onCopy={() => setCopySuccess('Copied!')}>
                     <button className="py-1 px-2 rounded">
                         <span className={`text-sm ${copySuccess === 'Copied!' ? 'text-green-500' : ''}`}>

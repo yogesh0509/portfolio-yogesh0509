@@ -7,8 +7,10 @@ import FileButton from './FileButton';
 import { useSidebar } from '../context/SidebarContext';
 import { VscHome } from "react-icons/vsc";
 import { CgProfile } from "react-icons/cg";
-import { CiSearch } from "react-icons/ci";
+import { IoSearchSharp } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Sidebar: React.FC = () => {
   const router = useRouter()
@@ -17,6 +19,7 @@ const Sidebar: React.FC = () => {
   const folders = [
     { folderName: 'Hackathons', files: ['chainlinkHackathon.sol', 'ETHForAll.sol'] },
     { folderName: 'Projects', files: ['1inch_api_defi.jsx', 'CrossChainHub.ts', 'TakeYourQuiz.js', 'Web3Dream11.sol'] },
+    { folderName: 'Experience', files: ['Hashstack.ts', 'GoogleSummerOfCode.sol']}
     // Add more folders as needed
   ];
 
@@ -29,10 +32,10 @@ const Sidebar: React.FC = () => {
       <div className="flex flex-col text-2xl bg-[#0d1117] text-[#c9d1d9]">
         <button className="mx-auto pb-5" onClick={isDrawer ? toggleDrawer : toggleMinimized}> <FiMenu /> </button>
         <button className="mx-auto pb-5" onClick={() => router.push('/')}> <VscHome /> </button>
-        <button className="mx-auto pb-5"> <CiSearch /> </button>
-        <button className="mx-auto pb-5"> 💻 </button>
-        <button className="mx-auto pb-5 mt-auto" onClick={() => router.push('/resume')}> <CgProfile /> </button>
-        <button className="mx-auto pb-5"> ⚙️ </button>
+        <button className="mx-auto pb-5"> <IoSearchSharp /> </button>
+        <button className="mx-auto pb-5" onClick={() => router.push('/resume')}> <CgProfile /> </button>
+        <button className="mx-auto pb-5 mt-auto"> <FaGithub /> </button>
+        <button className="mx-auto pb-5"> <FaLinkedin /> </button>
       </div>
       {(!minimized || (isDrawer && drawer)) && (
         <div className='pl-3'>
