@@ -1,0 +1,55 @@
+// Online hackathon conducted by Chainlink from April 2023 to June 2023. 
+
+// COMMANDS TO RUN THE PROJECT
+// npx hardhat run scripts/chainlinkHackathon --args info()
+// npx hardhat run scripts/chainlinkHackathon --args devTools()
+
+pragma solidity ^0.8.19;
+
+contract RaCoTo {
+    address public owner;
+    string[] public technologiesUsed;
+
+    constructor(string[] memory _technologies) {
+        owner = msg.sender;
+        technologiesUsed = _technologies;
+    }
+
+    function info() external {}
+
+    function devTools() external view returns (string memory) {
+        string memory techList;
+        for (uint256 i = 0; i < technologiesUsed.length; i++) {
+            if (i > 0) {
+                techList = string(abi.encodePacked(techList, ", ", technologiesUsed[i]));
+            } else {
+                techList = technologiesUsed[i];
+            }
+        }
+        return techList;
+    }
+
+    function resources() external {}
+}
+
+// test/devTools.test.js
+const { expect } = require('chai');
+
+describe('devTools', function () {
+  let RaCoTo;
+  let RaCoTo;
+  let owner;
+  const technologies = ['Solidity', 'Javascript'];
+
+  beforeEach(async function () {
+    RaCoTo = await ethers.getContractFactory('RaCoTo');
+    [owner] = await ethers.getSigners();
+    RaCoTo = await RaCoTo.deploy(technologies);
+    await RaCoTo.deployed();
+  });
+
+  it('should return correct tech list', async function () {
+    const expectedTechList = 'Solidity, Javascript';
+    expect(await RaCoTo.devTools()).to.equal(expectedTechList);
+  });
+});

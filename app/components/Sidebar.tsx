@@ -18,8 +18,8 @@ const Sidebar: React.FC = () => {
 
   const folders = [
     { folderName: 'Hackathons', files: ['chainlinkHackathon.sol', 'ETHForAll.sol'] },
-    { folderName: 'Projects', files: ['1inch_api_defi.jsx', 'CrossChainHub.ts', 'TakeYourQuiz.js', 'Web3Dream11.sol'] },
-    { folderName: 'Experience', files: ['Hashstack.ts', 'GoogleSummerOfCode.sol']}
+    { folderName: 'Projects', files: ['inch1APIDefi.jsx', 'CrossChainHub.ts', 'TakeYourQuiz.js', 'Web3Dream11.sol'] },
+    { folderName: 'Experience', files: ['Hashstack.ts', 'GoogleSummerOfCode.sol'] }
     // Add more folders as needed
   ];
 
@@ -34,8 +34,8 @@ const Sidebar: React.FC = () => {
         <button className="mx-auto pb-5" onClick={() => router.push('/')}> <VscHome /> </button>
         <button className="mx-auto pb-5"> <IoSearchSharp /> </button>
         <button className="mx-auto pb-5" onClick={() => router.push('/resume')}> <CgProfile /> </button>
-        <button className="mx-auto pb-5 mt-auto"> <FaGithub /> </button>
-        <button className="mx-auto pb-5"> <FaLinkedin /> </button>
+        <button className="mx-auto pb-5 mt-auto" onClick={() => window.open('https://www.github.com/yogesh0509', '_blank', 'noopener,noreferrer')}> <FaGithub /> </button>
+        <button className="mx-auto pb-5" onClick={() => window.open('https://www.linkedin.com/in/yogesh0509', '_blank', 'noopener,noreferrer')}> <FaLinkedin /> </button>
       </div>
       {(!minimized || (isDrawer && drawer)) && (
         <div className='pl-3'>

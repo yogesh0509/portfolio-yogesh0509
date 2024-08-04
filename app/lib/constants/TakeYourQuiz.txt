@@ -1,0 +1,36 @@
+// COMMANDS TO RUN THE PROJECT
+// curl http://localhost:3000/TakeYourQuiz/info
+// curl http://localhost:3000/TakeYourQuiz/devTools
+
+const express = require('express');
+const app = express();
+
+// Routes
+app.get("/info", (req, res) =>{
+    res.render("info");
+});
+
+app.get("/devTools", (req, res) =>{
+    res.render("devTools");
+});
+
+app.get("/resources", (req, res) =>{
+    res.render("resources");
+});
+
+// Error Handling Middleware
+app.use((req, res, next) => {
+    const error = new Error('Not Found');
+    error.status = 404;
+    next(error);
+});
+
+app.use((error, req, res, next) => {
+    res.status(error.status || 500);
+    res.send('Error: ' + error.message);
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log("Server is running on port 3000");
+});

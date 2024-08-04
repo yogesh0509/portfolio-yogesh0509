@@ -1,0 +1,53 @@
+// COMMANDS TO RUN THE PROJECT
+// npx hardhat run scripts/Web3Dream11 --args info()
+// npx hardhat run scripts/Web3Dream11 --args devTools()
+
+pragma solidity ^0.8.0;
+
+contract Web3Dream11 {
+    address public owner;
+    string[] public technologiesUsed;
+
+    constructor(string[] memory _technologies) {
+        owner = msg.sender;
+        technologiesUsed = _technologies;
+    }
+
+    function info() external {}
+
+    function devTools() external view returns (string memory) {
+        string memory techList;
+        for (uint256 i = 0; i < technologiesUsed.length; i++) {
+            if (i > 0) {
+                techList = string(abi.encodePacked(techList, ", ", technologiesUsed[i]));
+            } else {
+                techList = technologiesUsed[i];
+            }
+        }
+        return techList;
+    }
+
+    function resources() external {}
+}
+
+// test/devTools.test.js
+const { expect } = require('chai');
+
+describe('devTools', function () {
+  let Web3Dream11;
+  let web3Dream11;
+  let owner;
+  const technologies = ['Javascript', 'Solidity', 'toml'];
+
+  beforeEach(async function () {
+    Web3Dream11 = await ethers.getContractFactory('Web3Dream11');
+    [owner] = await ethers.getSigners();
+    web3Dream11 = await Web3Dream11.deploy(technologies);
+    await web3Dream11.deployed();
+  });
+
+  it('should return correct tech list', async function () {
+    const expectedTechList = 'Solidity, Hardhat, React';
+    expect(await web3Dream11.devTools()).to.equal(expectedTechList);
+  });
+});

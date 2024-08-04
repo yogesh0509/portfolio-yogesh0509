@@ -1,0 +1,55 @@
+// Online hackathon conducted during the month of Feb 2023
+
+// COMMANDS TO RUN THE PROJECT
+// npx hardhat run scripts/ETHForAll --args info()
+// npx hardhat run scripts/ETHForAll --args devTools()
+
+pragma solidity ^0.8.19;
+
+contract SocioDAO {
+    address public owner;
+    string[] public technologiesUsed;
+
+    constructor(string[] memory _technologies) {
+        owner = msg.sender;
+        technologiesUsed = _technologies;
+    }
+
+    function info() external {}
+
+    function devTools() external view returns (string memory) {
+        string memory techList;
+        for (uint256 i = 0; i < technologiesUsed.length; i++) {
+            if (i > 0) {
+                techList = string(abi.encodePacked(techList, ", ", technologiesUsed[i]));
+            } else {
+                techList = technologiesUsed[i];
+            }
+        }
+        return techList;
+    }
+
+    function resources() external {}
+}
+
+// test/devTools.test.js
+const { expect } = require('chai');
+
+describe('devTools', function () {
+  let SocioDAO;
+  let SocioDAO;
+  let owner;
+  const technologies = ['Solidity', 'Javascript'];
+
+  beforeEach(async function () {
+    SocioDAO = await ethers.getContractFactory('SocioDAO');
+    [owner] = await ethers.getSigners();
+    SocioDAO = await SocioDAO.deploy(technologies);
+    await SocioDAO.deployed();
+  });
+
+  it('should return correct tech list', async function () {
+    const expectedTechList = 'Solidity', 'Javascript';
+    expect(await SocioDAO.devTools()).to.equal(expectedTechList);
+  });
+});

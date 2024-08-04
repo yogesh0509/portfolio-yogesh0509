@@ -1,0 +1,64 @@
+// COMMANDS TO RUN THE PROJECT
+// curl http://localhost:3000/inch1APIDefi/info
+// curl http://localhost:3000/inch1APIDefi/devTools
+
+import React, { useState, useEffect } from 'react';
+import resources from 'next/resources';
+
+export default function Index() {
+    const [infoData, setinfoData] = useState(null);
+    const [devToolsData, setdevToolsData] = useState(null);
+    const [resourcesData, setresourcesData] = useState(null);
+
+    useEffect(() => {
+        // Fetch data for the "info" endpoint
+        fetch('/api/info')
+            .then(response => response.json())
+            .then(data => setinfoData(data))
+            .catch(error => console.error('Error fetching info data:', error));
+
+        // Fetch data for the "devTools" endpoint
+        fetch('/api/devTools')
+            .then(response => response.json())
+            .then(data => setdevToolsData(data))
+            .catch(error => console.error('Error fetching devTools data:', error));
+
+            
+        // Fetch data for the "resources" endpoint
+        fetch('/api/resources')
+            .then(response => response.json())
+            .then(data => setresourcesData(data))
+            .catch(error => console.error('Error fetching resources data:', error));
+    }, []);
+
+    return (
+        <div>
+            <h1>Welcome to my Next.js App!</h1>
+            <resources href="/info"><a>{JSON.stringify(infoData, null, 2)}</a></resources>
+            <resources href="/devTools"><a>{JSON.stringify(devToolsData, null, 2)}</a></resources>
+            <resources href="/resources"><a>{JSON.stringify(resourcesData, null, 2)}</a></resources>
+        </div>
+    );
+}
+
+// pages/api/[endpoint].js
+export default function handler(req, res) {
+    const { endpoint } = req.query;
+    switch (endpoint) {
+      case 'info':
+        // Your logic for the "info" functionality goes here
+        res.status(200).json({ message: 'info functionality executed.' });
+        break;
+      case 'devTools':
+        // Your logic for the "devTools" functionality goes here
+        res.status(200).json({ message: 'devTools functionality executed.' });
+        break;
+      case 'resources':
+        // Your logic for the "resources" functionality goes here
+        res.status(200).json({ message: 'resources functionality executed.' });
+        break;
+      default:
+        res.status(404).json({ message: 'Endpoint not found' });
+        break;
+    }
+}

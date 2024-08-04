@@ -1,0 +1,38 @@
+// COMMANDS TO RUN THE PROJECT
+// curl http://localhost:3000/CrossChainHub/info
+// curl http://localhost:3000/CrossChainHub/devTools
+
+import express, { Request, Response, NextFunction } from 'express';
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Routes
+app.get("/info", (req: Request, res: Response) =>{
+    res.render("info");
+});
+
+app.get("/devTools", (req: Request, res: Response) =>{
+    res.render("devTools");
+});
+
+app.get("/resources", (req: Request, res: Response) =>{
+    res.render("resources");
+});
+
+// Error Handling Middleware
+app.use((req: Request, res: Response, next: NextFunction) => {
+    const error: Error = new Error('Not Found');
+    (error as any).status = 404;
+    next(error);
+});
+
+app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
+    res.status((error as any).status || 500);
+    res.send('Error: ' + error.message);
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log("Server is running on port 3000");
+});
