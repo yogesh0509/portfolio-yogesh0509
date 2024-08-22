@@ -2,12 +2,12 @@
 import { promises as fs } from 'fs';
 
 async function loadResources() {
-    const inch1APIDefi = fs.readFile(process.cwd() + '/app/constants/inch1APIDefi.txt', 'utf8');
-    const CrossChainHub = fs.readFile(process.cwd() + '/app/constants/CrossChainHub.txt', 'utf8');
-    const TakeYourQuiz = fs.readFile(process.cwd() + '/app/constants/TakeYourQuiz.txt', 'utf8');
-    const Web3Dream11 = fs.readFile(process.cwd() + '/app/constants/Web3Dream11.txt', 'utf8');
-    const chainlinkHackathon = fs.readFile(process.cwd() + '/app/constants/chainlinkHackathon.txt', 'utf8');
-    const ETHForAll = fs.readFile(process.cwd() + '/app/constants/ETHForAll.txt', 'utf8');
+    const inch1APIDefi = fs.readFile(process.cwd() + '/public/content/inch1APIDefi.txt', 'utf8');
+    const CrossChainHub = fs.readFile(process.cwd() + '/public/content/CrossChainHub.txt', 'utf8');
+    const TakeYourQuiz = fs.readFile(process.cwd() + '/public/content/TakeYourQuiz.txt', 'utf8');
+    const Web3Dream11 = fs.readFile(process.cwd() + '/public/content/Web3Dream11.txt', 'utf8');
+    const chainlinkHackathon = fs.readFile(process.cwd() + '/public/content/chainlinkHackathon.txt', 'utf8');
+    const ETHForAll = fs.readFile(process.cwd() + '/public/content/ETHForAll.txt', 'utf8');
 
     const [ inch1APIDefiContent, CrossChainHubContent, TakeYourQuizContent, Web3Dream11Content, chainlinkHackathonContent, ETHForAllContent ] = await Promise.all([
         inch1APIDefi,

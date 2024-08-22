@@ -1,6 +1,6 @@
 'use server'
 
-import values from '../constants/values.json';
+import values from './values.json';
 
 interface Technology {
     framework: string[];
