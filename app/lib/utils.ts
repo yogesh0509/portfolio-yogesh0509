@@ -1,21 +1,30 @@
 'use server'
 import { promises as fs } from 'fs';
+import path from 'path';
 
 async function loadResources() {
-    const inch1APIDefi = fs.readFile(process.cwd() + '/public/content/inch1APIDefi.txt', 'utf8');
-    const CrossChainHub = fs.readFile(process.cwd() + '/public/content/CrossChainHub.txt', 'utf8');
-    const TakeYourQuiz = fs.readFile(process.cwd() + '/public/content/TakeYourQuiz.txt', 'utf8');
-    const Web3Dream11 = fs.readFile(process.cwd() + '/public/content/Web3Dream11.txt', 'utf8');
-    const chainlinkHackathon = fs.readFile(process.cwd() + '/public/content/chainlinkHackathon.txt', 'utf8');
-    const ETHForAll = fs.readFile(process.cwd() + '/public/content/ETHForAll.txt', 'utf8');
+    const inch1APIDefiPath = path.join(process.cwd(), 'public/content/inch1APIDefi.txt');
+    const CrossChainHubPath = path.join(process.cwd(), 'public/content/CrossChainHub.txt');
+    const TakeYourQuizPath = path.join(process.cwd(), 'public/content/TakeYourQuiz.txt');
+    const Web3Dream11Path = path.join(process.cwd(), 'public/content/Web3Dream11.txt');
+    const chainlinkHackathonPath = path.join(process.cwd(), 'public/content/chainlinkHackathon.txt');
+    const ETHForAllPath = path.join(process.cwd(), 'public/content/ETHForAll.txt');
 
-    const [ inch1APIDefiContent, CrossChainHubContent, TakeYourQuizContent, Web3Dream11Content, chainlinkHackathonContent, ETHForAllContent ] = await Promise.all([
-        inch1APIDefi,
-        CrossChainHub,
-        TakeYourQuiz,
-        Web3Dream11,
-        chainlinkHackathon,
-        ETHForAll,
+    // Read the files asynchronously
+    const [
+        inch1APIDefiContent,
+        CrossChainHubContent,
+        TakeYourQuizContent,
+        Web3Dream11Content,
+        chainlinkHackathonContent,
+        ETHForAllContent
+    ] = await Promise.all([
+        fs.readFile(inch1APIDefiPath, 'utf8'),
+        fs.readFile(CrossChainHubPath, 'utf8'),
+        fs.readFile(TakeYourQuizPath, 'utf8'),
+        fs.readFile(Web3Dream11Path, 'utf8'),
+        fs.readFile(chainlinkHackathonPath, 'utf8'),
+        fs.readFile(ETHForAllPath, 'utf8')
     ]);
 
     const resources = {
