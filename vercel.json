@@ -1,0 +1,76 @@
+{
+  "redirects": [
+    {
+      "source": "/README.md",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/Projects/Web3Dream11.sol",
+      "destination": "/projects/web3-dream11/README.md",
+      "permanent": false
+    },
+    {
+      "source": "/Projects/CrossChainHub.ts",
+      "destination": "/projects/crosschain-hub/README.md",
+      "permanent": false
+    },
+    {
+      "source": "/Experience/Hashstack.ts",
+      "destination": "/experience/hashstack.md",
+      "permanent": false
+    },
+    {
+      "source": "/Experience/GoogleSummerOfCode.sol",
+      "destination": "/experience/gsoc-aossie.md",
+      "permanent": false
+    },
+    {
+      "source": "/Projects/TakeYourQuiz.js",
+      "destination": "/archive/takeyourquiz/README.md",
+      "permanent": false
+    },
+    {
+      "source": "/Projects/inch1APIDefi.jsx",
+      "destination": "/archive/1inch-api-defi/README.md",
+      "permanent": false
+    },
+    {
+      "source": "/Hackathons/ETHForAll.sol",
+      "destination": "/archive/sociodao/README.md",
+      "permanent": false
+    },
+    {
+      "source": "/Hackathons/chainlinkHackathon.sol",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://mempool.space https://ethereum-rpc.publicnode.com https://starknet-rpc.publicnode.com https://ethereum-sepolia-rpc.publicnode.com https://starknet-sepolia-rpc.publicnode.com https://sepolia.base.org https://api.avax-test.network https://rpc.mordor.etccooperative.org; frame-src 'none'; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+        }
+      ]
+    }
+  ]
+}
