@@ -24,7 +24,7 @@ jobs:
       # Vercel, store its URL as this secret, and the last step triggers the deploy itself.
       VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
