@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "syncedAt": "2026-10-08T20:47:41.011Z",
+  "profile": {
+    "login": "yogesh0509",
+    "name": "Yogesh Agrawal",
+    "bio": "Full Stack developer | Blockchain developer | Open Source Contributor",
+    "location": "Bangalore",
+    "followers": 16,
+    "publicRepos": 28,
+    "createdAt": "2021-12-19T18:46:03Z"
+  },
+  "repos": [
+    {
+      "name": "Haystack",
+      "fullName": "yogesh0509/Haystack",
+      "description": "Private Electrum Sync",
+      "language": "Rust",
+      "languages": {
+        "Dockerfile": 2566,
+        "Python": 76868,
+        "Rust": 186567
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2026-09-08T11:35:18Z",
+      "pushedAt": "2026-10-05T15:27:22Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/Haystack",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "yogesh0509",
+      "fullName": "yogesh0509/yogesh0509",
+      "description": "My personal repository",
+      "language": null,
+      "languages": {},
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2022-06-10T01:49:16Z",
+      "pushedAt": "2026-09-08T11:20:44Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/yogesh0509",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "tech-lightlink-engineering-yogesh",
+      "fullName": "yogesh0509/tech-lightlink-engineering-yogesh",
+      "description": null,
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 20206
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2026-03-27T07:06:44Z",
+      "pushedAt": "2026-03-27T07:08:18Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/tech-lightlink-engineering-yogesh",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "starknet-eth-backend-relayer",
+      "fullName": "yogesh0509/starknet-eth-backend-relayer",
+      "description": "A relayer bridge designed to facilitate fund transfers from Starknet to Ethereum and other Layer 2 (L2) networks.  This project was developed as part of a startup initiative, where I independently designed and implemented most of the backend infrastructure. I was also involved in the initial ideation and architecture of the relayer.",
+      "language": "TypeScript",
+      "languages": {
+        "JavaScript": 329,
+        "TypeScript": 153205
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2026-02-20T22:27:18Z",
+      "pushedAt": "2026-02-20T22:27:45Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/starknet-eth-backend-relayer",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "durgapur-infra",
+      "fullName": "yogesh0509/durgapur-infra",
+      "description": null,
+      "language": "TypeScript",
+      "languages": {
+        "CSS": 4435,
+        "JavaScript": 3018,
+        "TypeScript": 200896
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": "https://durgapur-infra.vercel.app",
+      "createdAt": "2025-10-23T18:09:00Z",
+      "pushedAt": "2025-12-02T05:49:17Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/durgapur-infra",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "BakeXP",
+      "fullName": "yogesh0509/BakeXP",
+      "description": null,
+      "language": "TypeScript",
+      "languages": {
+        "Cairo": 30330,
+        "CSS": 2962,
+        "JavaScript": 2964,
+        "TypeScript": 293903
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": "https://bake-xp.vercel.app",
+      "createdAt": "2025-06-25T20:09:55Z",
+      "pushedAt": "2025-06-26T21:55:39Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/BakeXP",
+      "defaultBranch": "main",
+      "hasReadme": true
+    },
+    {
+      "name": "web3-DREAM11",
+      "fullName": "yogesh0509/web3-DREAM11",
+      "description": "A platform where cricket teams and franchises can buy and sell players for their respective leagues or tournaments. The marketplace usually operates online and facilitates the bidding and trading process for cricket players.",
+      "language": "Solidity",
+      "languages": {
+        "CSS": 3446,
+        "Dockerfile": 256,
+        "JavaScript": 61202,
+        "Python": 17709,
+        "Rust": 26822,
+        "Shell": 3516,
+        "Solidity": 873634,
+        "TypeScript": 97510
+      },
+      "stars": 16,
+      "forks": 6,
+      "topics": [
+        "blockchain",
+        "chainlink"
+      ],
+      "homepage": "https://web3-dream-11.vercel.app",
+      "createdAt": "2023-01-08T20:05:34Z",
+      "pushedAt": "2025-05-23T07:11:07Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/web3-DREAM11",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "Shikamaru-Protocol",
+      "fullName": "yogesh0509/Shikamaru-Protocol",
+      "description": null,
+      "language": "TypeScript",
+      "languages": {
+        "Dockerfile": 1558,
+        "Shell": 289,
+        "TypeScript": 97357
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2025-01-27T06:32:52Z",
+      "pushedAt": "2025-02-14T22:53:47Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/Shikamaru-Protocol",
+      "defaultBranch": "main",
+      "hasReadme": true
+    },
+    {
+      "name": "BlockDawgs",
+      "fullName": "yogesh0509/BlockDawgs",
+      "description": null,
+      "language": null,
+      "languages": {
+        "CSS": 1013,
+        "JavaScript": 135,
+        "TypeScript": 124490
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2024-12-02T03:45:10Z",
+      "pushedAt": "2024-12-02T03:36:52Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/BlockDawgs",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "chiji-offchain",
+      "fullName": "yogesh0509/chiji-offchain",
+      "description": null,
+      "language": "Rust",
+      "languages": {
+        "RenderScript": 1,
+        "Rust": 30727
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2024-10-12T14:09:21Z",
+      "pushedAt": "2024-10-19T18:33:16Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/chiji-offchain",
+      "defaultBranch": "main",
+      "hasReadme": true
+    },
+    {
+      "name": "portfolio-yogesh0509",
+      "fullName": "yogesh0509/portfolio-yogesh0509",
+      "description": "Portfolio website using NEXT.js and tailwind CSS",
+      "language": "TypeScript",
+      "languages": {
+        "CSS": 884,
+        "JavaScript": 175,
+        "TypeScript": 37950
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": "https://www.yogesh0509.info/",
+      "createdAt": "2024-02-01T07:05:35Z",
+      "pushedAt": "2024-09-14T23:13:41Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/portfolio-yogesh0509",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "song-recommendation-kmeans",
+      "fullName": "yogesh0509/song-recommendation-kmeans",
+      "description": null,
+      "language": "Jupyter Notebook",
+      "languages": {
+        "CSS": 884,
+        "JavaScript": 175,
+        "Jupyter Notebook": 102532,
+        "Python": 4207,
+        "TypeScript": 15238
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2024-06-18T03:01:00Z",
+      "pushedAt": "2024-07-14T21:47:00Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/song-recommendation-kmeans",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "CrossChain-Hub",
+      "fullName": "yogesh0509/CrossChain-Hub",
+      "description": "API hooks to to enable interoperable smart contracts",
+      "language": "Solidity",
+      "languages": {
+        "JavaScript": 959519,
+        "Makefile": 2249,
+        "Nix": 170,
+        "Python": 1483,
+        "Ruby": 216477,
+        "Shell": 8426,
+        "Solidity": 1718731,
+        "TypeScript": 8919
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2023-12-18T22:27:27Z",
+      "pushedAt": "2024-03-23T16:07:22Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/CrossChain-Hub",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "face-auth-io",
+      "fullName": "yogesh0509/face-auth-io",
+      "description": null,
+      "language": "JavaScript",
+      "languages": {
+        "CSS": 1767,
+        "HTML": 419,
+        "JavaScript": 2073
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": "https://face-auth-io.vercel.app",
+      "createdAt": "2024-01-31T06:15:53Z",
+      "pushedAt": "2024-01-31T06:16:10Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/face-auth-io",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "TakeYourQuiz",
+      "fullName": "yogesh0509/TakeYourQuiz",
+      "description": "A customizable quiz website is an online platform that enables users to create and administer custom quizzes using their own questions and answers. With this particular website, users can easily create a quiz by uploading a PDF file containing the questions and answer choices.",
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 42430,
+        "Pug": 16509
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "project"
+      ],
+      "homepage": "https://takeyourquiz.onrender.com/",
+      "createdAt": "2021-12-19T18:47:57Z",
+      "pushedAt": "2023-12-20T12:42:26Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/TakeYourQuiz",
+      "defaultBranch": "main",
+      "hasReadme": true
+    },
+    {
+      "name": "medical-consultancy",
+      "fullName": "yogesh0509/medical-consultancy",
+      "description": null,
+      "language": "HTML",
+      "languages": {
+        "HTML": 75787,
+        "JavaScript": 8762
+      },
+      "stars": 0,
+      "forks": 1,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2023-12-16T10:53:28Z",
+      "pushedAt": "2023-12-16T10:55:37Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/medical-consultancy",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "1inch-API-defi",
+      "fullName": "yogesh0509/1inch-API-defi",
+      "description": "Token swapping using 1inch protocol to exchange one cryptocurrency for another without a middleman.",
+      "language": "JavaScript",
+      "languages": {
+        "CSS": 1225,
+        "JavaScript": 25273
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": "https://dzap-task1.vercel.app",
+      "createdAt": "2023-10-16T15:32:13Z",
+      "pushedAt": "2023-10-22T00:19:47Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/1inch-API-defi",
+      "defaultBranch": "main",
+      "hasReadme": true
+    },
+    {
+      "name": "E-commerce-edu",
+      "fullName": "yogesh0509/E-commerce-edu",
+      "description": null,
+      "language": "JavaScript",
+      "languages": {
+        "CSS": 105283,
+        "Dockerfile": 442,
+        "HTML": 3616,
+        "JavaScript": 223832,
+        "SCSS": 110700
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2023-05-09T08:57:19Z",
+      "pushedAt": "2023-05-09T09:18:25Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/E-commerce-edu",
+      "defaultBranch": "main",
+      "hasReadme": false
+    },
+    {
+      "name": "GSOC2023-Proposal",
+      "fullName": "yogesh0509/GSOC2023-Proposal",
+      "description": "This was my proposal for GSOC 2023 for the organization AOSSIE",
+      "language": null,
+      "languages": {},
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2023-03-30T00:54:23Z",
+      "pushedAt": "2023-04-03T00:13:10Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/GSOC2023-Proposal",
+      "defaultBranch": "main",
+      "hasReadme": true
+    },
+    {
+      "name": "local-chainlink-node",
+      "fullName": "yogesh0509/local-chainlink-node",
+      "description": "This is a sample repo for running a local chainlink node",
+      "language": "Shell",
+      "languages": {
+        "Shell": 399
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2023-03-13T18:56:06Z",
+      "pushedAt": "2023-03-13T19:05:36Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/local-chainlink-node",
+      "defaultBranch": "main",
+      "hasReadme": true
+    },
+    {
+      "name": "SocioDAO",
+      "fullName": "yogesh0509/SocioDAO",
+      "description": "A DAO (Decentralized Autonomous Organization) can be designed as a society that allows members to buy properties listed on the platform, which in turn grants them voting powers in the proposals of the society. The society aims to be a democratic and decentralized organization, where decisions are made by its members through voting.",
+      "language": "JavaScript",
+      "languages": {
+        "CSS": 2888,
+        "HTML": 1777,
+        "JavaScript": 48634,
+        "Solidity": 18427
+      },
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "homepage": null,
+      "createdAt": "2023-02-20T12:04:29Z",
+      "pushedAt": "2023-02-20T12:43:22Z",
+      "fork": false,
+      "archived": false,
+      "htmlUrl": "https://github.com/yogesh0509/SocioDAO",
+      "defaultBranch": "main",
+      "hasReadme": true
+    }
+  ],
+  "pullRequests": [
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 57,
+      "title": "fix/rolling window bug fix",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/57",
+      "mergedAt": "2026-08-25T12:19:09Z"
+    },
+    {
+      "repo": "Explore-Beyond-Innovations/ZeroXBridge_Contracts",
+      "number": 104,
+      "title": "Close #102",
+      "url": "https://github.com/Explore-Beyond-Innovations/ZeroXBridge_Contracts/pull/104",
+      "mergedAt": "2025-08-24T19:36:27Z"
+    },
+    {
+      "repo": "Explore-Beyond-Innovations/ZeroXBridge_Contracts",
+      "number": 99,
+      "title": "feat: added l1 deployment [issue #80]",
+      "url": "https://github.com/Explore-Beyond-Innovations/ZeroXBridge_Contracts/pull/99",
+      "mergedAt": "2025-06-30T15:00:08Z"
+    },
+    {
+      "repo": "Explore-Beyond-Innovations/ZeroXBridge_Contracts",
+      "number": 96,
+      "title": "feat: added deployment script [issue #81]",
+      "url": "https://github.com/Explore-Beyond-Innovations/ZeroXBridge_Contracts/pull/96",
+      "mergedAt": "2025-06-30T11:58:26Z"
+    },
+    {
+      "repo": "Explore-Beyond-Innovations/ZeroXBridge_Sequencer",
+      "number": 30,
+      "title": "Feat: implement Starknet L2 burn event fetcher with last block index …",
+      "url": "https://github.com/Explore-Beyond-Innovations/ZeroXBridge_Sequencer/pull/30",
+      "mergedAt": "2025-05-06T14:14:11Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 27,
+      "title": "Shu oracle",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/27",
+      "mergedAt": "2025-03-10T16:24:16Z"
+    },
+    {
+      "repo": "Trustless-Work/trustlesswork-spikes",
+      "number": 53,
+      "title": "feat: added eliza plugin for signing stellar transactions",
+      "url": "https://github.com/Trustless-Work/trustlesswork-spikes/pull/53",
+      "mergedAt": "2025-03-05T14:11:24Z"
+    },
+    {
+      "repo": "babybear-labs/benchmark",
+      "number": 2,
+      "title": "feat: added poseidon hash",
+      "url": "https://github.com/babybear-labs/benchmark/pull/2",
+      "mergedAt": "2024-11-21T16:47:49Z"
+    },
+    {
+      "repo": "babybear-labs/benchmark",
+      "number": 1,
+      "title": "feat: added risc0",
+      "url": "https://github.com/babybear-labs/benchmark/pull/1",
+      "mergedAt": "2024-11-21T06:43:24Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 26,
+      "title": "updated git modules, packages, README and lint (#25)",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/26",
+      "mergedAt": "2024-05-21T23:55:35Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 25,
+      "title": "updated git modules, packages, README and lint",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/25",
+      "mergedAt": "2024-05-15T20:02:47Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity-WebDashboard",
+      "number": 91,
+      "title": "env file for sepolia deployment of djed orisis",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity-WebDashboard/pull/91",
+      "mergedAt": "2024-03-13T19:25:23Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity-WebDashboard",
+      "number": 94,
+      "title": "removed wallet support other than metamask temporarily",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity-WebDashboard/pull/94",
+      "mergedAt": "2024-02-22T18:10:32Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 16,
+      "title": "sepolia testnet deployments",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/16",
+      "mergedAt": "2024-01-16T16:42:54Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 15,
+      "title": "bug fix",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/15",
+      "mergedAt": "2023-12-07T17:43:19Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 13,
+      "title": "Differentiate rcMinPrice from rcInitialPrice #12",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/13",
+      "mergedAt": "2023-11-06T09:20:42Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 10,
+      "title": "added Chainlink oracles",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/10",
+      "mergedAt": "2023-10-10T09:58:28Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity",
+      "number": 9,
+      "title": "added Api3 oracle",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity/pull/9",
+      "mergedAt": "2023-07-17T07:13:56Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity-WebDashboard",
+      "number": 62,
+      "title": "pull request #2 for issue #51",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity-WebDashboard/pull/62",
+      "mergedAt": "2023-05-29T14:48:34Z"
+    },
+    {
+      "repo": "DjedAlliance/Djed-Solidity-WebDashboard",
+      "number": 60,
+      "title": "replaced hardcoded text with env variables",
+      "url": "https://github.com/DjedAlliance/Djed-Solidity-WebDashboard/pull/60",
+      "mergedAt": "2023-05-29T03:03:53Z"
+    },
+    {
+      "repo": "agamjotsingh18/pollitup",
+      "number": 66,
+      "title": "fixed bug in create poll form",
+      "url": "https://github.com/agamjotsingh18/pollitup/pull/66",
+      "mergedAt": "2022-10-13T09:44:05Z"
+    },
+    {
+      "repo": "GoogleChromeLabs/web-audio-samples",
+      "number": 243,
+      "title": "added header files to wasm-supersaw index",
+      "url": "https://github.com/GoogleChromeLabs/web-audio-samples/pull/243",
+      "mergedAt": "2022-03-29T21:01:58Z"
+    }
+  ],
+  "demos": [
+    {
+      "repo": "yogesh0509/web3-DREAM11",
+      "url": "https://web3-dream-11.vercel.app",
+      "status": 200,
+      "checkedAt": "2026-10-08T20:47:38.346Z"
+    }
+  ]
+}

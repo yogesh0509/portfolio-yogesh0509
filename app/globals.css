@@ -1,36 +1,150 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* data/ holds code excerpts shown on the site, not source: do not scan it for class names. */
+@source not "../data";
+
+/* Tailwind v4 buttons default to cursor:default; keep the pointer. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@theme inline {
+  --color-chrome: #181818; /* title bar, activity bar, sidebar, tabs, panel header, status bar */
+  --color-editor: #1f1f1f;
+  --color-line: #2b2b2b;
+  --color-fg: #cccccc;
+  --color-fg-dim: #9d9d9d;
+  --color-accent: #0078d4;
+  --color-ubuntu: #e95420; /* Ubuntu orange: for icons and accents, which need only 3:1 contrast */
+  --color-ubuntu-strong: #c7461b; /* a deeper orange for surfaces that carry text: white on it is 4.9:1 */
+  --color-aubergine: #300a24; /* the classic Ubuntu terminal background */
+  --font-sans: var(--font-ubuntu-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ubuntu-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+/* One dark theme, modelled on VS Code's Dark Modern, whatever the OS preference is. */
+:root {
+  color-scheme: dark;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #1f1f1f;
+  color: #cccccc;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/*
+ * Ubuntu's default terminal palette, used by the terminal and by replayed recordings. Five of the
+ * stock colours (black, red, blue, magenta, bright red) are too dark on the aubergine background to
+ * meet the 4.5:1 text contrast minimum, so they are lightened. Check any new
+ * colour against the background before adding it.
+ */
+.t-black { color: #8b8d89; }
+.t-red { color: #f44747; }
+.t-green { color: #4e9a06; }
+.t-yellow { color: #c4a000; }
+.t-blue { color: #729fcf; }
+.t-magenta { color: #ad7fa8; }
+.t-cyan { color: #06989a; }
+.t-white { color: #d3d7cf; }
+.t-brightBlack { color: #888a85; }
+.t-brightRed { color: #ff5c5c; }
+.t-brightGreen { color: #8ae234; }
+.t-brightYellow { color: #fce94f; }
+.t-brightBlue { color: #729fcf; }
+.t-brightMagenta { color: #ad7fa8; }
+.t-brightCyan { color: #34e2e2; }
+.t-brightWhite { color: #eeeeec; }
+
+/* Highlighted code: Shiki draws the colours, this adds the frame and line numbers. */
+.code-view pre {
+  margin: 0;
+  padding: 8px 0;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.6;
+  background: transparent !important;
 }
+
+.code-view code {
+  display: block;
+  min-width: max-content;
+  counter-reset: line;
+}
+
+.code-view .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 3ch;
+  margin: 0 1.5rem 0 1rem;
+  text-align: right;
+  color: #6e7681;
+  user-select: none;
+}
+
+/* The résumé page: styled like the rendered markdown, and printable. */
+.resume h1, .resume h2, .resume h3 { color: #e6e6e6; line-height: 1.3; }
+.resume h2 { margin: 1.6rem 0 0.6rem; padding-bottom: 0.25rem; border-bottom: 1px solid #2b2b2b; font-size: 1.15rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.resume h3 { margin: 0.8rem 0 0.2rem; font-size: 1rem; font-weight: 600; }
+.resume ul { margin: 0.3rem 0 0.8rem; padding-left: 1.25rem; list-style: disc; }
+.resume li + li { margin-top: 0.2rem; }
+.resume a { color: #4daafc; text-decoration: underline; text-underline-offset: 2px; }
+
+@media print {
+  @page { margin: 14mm; }
+  /* The editor chrome is removed with Tailwind's print: variants; this restyles what is left. */
+  body, #resume-print { background: #fff; color: #000; }
+  #resume-print { max-width: none; padding: 0; font-size: 10.5pt; }
+  #resume-print h1, #resume-print h2, #resume-print h3, #resume-print strong { color: #000; }
+  #resume-print h2 { border-bottom-color: #999; }
+  #resume-print a { color: #000; text-decoration: none; }
+}
+
+/* Rendered markdown. Tailwind's reset removes default prose styling, so it is rebuilt here. */
+.md {
+  max-width: 52rem;
+  padding: 1.5rem 2rem 3rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.md h1, .md h2, .md h3, .md h4 { font-weight: 600; color: #e6e6e6; line-height: 1.3; }
+.md h1 { font-size: 1.9rem; margin: 0 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid #2b2b2b; }
+.md h2 { font-size: 1.4rem; margin: 2rem 0 0.8rem; padding-bottom: 0.3rem; border-bottom: 1px solid #2b2b2b; }
+.md h3 { font-size: 1.15rem; margin: 1.5rem 0 0.6rem; }
+.md h4 { font-size: 1rem; margin: 1.2rem 0 0.5rem; }
+.md p, .md ul, .md ol, .md pre, .md blockquote, .md .md-table-scroll { margin: 0 0 1rem; }
+.md ul { list-style: disc; padding-left: 1.5rem; }
+.md ol { list-style: decimal; padding-left: 1.5rem; }
+.md li > ul, .md li > ol { margin: 0.25rem 0 0; }
+.md li + li { margin-top: 0.25rem; }
+.md a { color: #4daafc; text-decoration: underline; text-underline-offset: 2px; }
+.md a:hover { color: #7cc1ff; }
+.md strong { color: #e6e6e6; }
+.md hr { border: 0; border-top: 1px solid #2b2b2b; margin: 2rem 0; }
+.md img { max-width: 100%; height: auto; }
+.md blockquote { padding: 0 1rem; border-left: 4px solid #3c3c3c; color: #9d9d9d; }
+.md :not(pre) > code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: #2b2b2b;
+  font-size: 0.9em;
+}
+.md pre {
+  padding: 0.8rem 1rem;
+  overflow-x: auto;
+  border: 1px solid #2b2b2b;
+  border-radius: 6px;
+  background: #181818 !important;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.md .md-table-scroll { overflow-x: auto; }
+.md table { border-collapse: collapse; }
+.md th, .md td { padding: 0.4rem 0.8rem; border: 1px solid #2b2b2b; text-align: left; }
+.md th { background: #252526; }
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -45,3 +159,10 @@ body {
   background-color: #a69c9c99;
   border-right-width: 0;
 }
+/*
+ * The workbench owns all scrolling, so the page itself must never scroll. Every scroll container is a
+ * positioning context (`relative`), so visually-hidden (position: absolute) elements inside it are
+ * clipped by it instead of stretching the document.
+ */
+html, body { height: 100%; }
+@media print { html, body { height: auto; } }

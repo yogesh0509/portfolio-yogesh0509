@@ -1,0 +1,71 @@
+name: Sync GitHub data
+
+# Pulls my public GitHub data into data/, checks the site still builds with it, and
+# commits only if something really changed. The commit triggers a Vercel deploy.
+
+on:
+  schedule:
+    - cron: "17 3 * * 1" # Mondays, 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-github
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      # Optional. If Vercel does not deploy commits pushed by the Actions bot (it can block
+      # commits whose author has no Vercel access on a Hobby plan), create a Deploy Hook in
+      # Vercel, store its URL as this secret, and the last step triggers the deploy itself.
+      VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync GitHub data
+        run: npm run sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Did anything under data/ change?
+        id: diff
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git status --short data/
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes under data/."
+          fi
+
+      # A push made with the built-in token does not trigger ci.yml, so this job runs the
+      # checks itself. A bad snapshot must not reach production.
+      - name: Check the site still builds with the new data
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          npm run typecheck
+          npm run build
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "chore(data): sync GitHub data"
+          git push
+
+      - name: Trigger Vercel deploy
+        if: steps.diff.outputs.changed == 'true' && env.VERCEL_DEPLOY_HOOK != ''
+        run: curl --fail --silent --show-error -X POST "$VERCEL_DEPLOY_HOOK"

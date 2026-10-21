@@ -1,124 +1,103 @@
-export default function Page(){
-    return (
-        <div className="flex justify-center items-center min-h-screen">
-            <div className="container mx-auto text-center whitespace-pre-wrap">
-                <pre>
-                    {` __________________________________________________________
-|                                                          |
-|                    YOGESH AGRAWAL                        |
-|__________________________________________________________|
+import type { Metadata } from "next";
+import Link from "next/link";
+import PrintButton from "@/components/editor/PrintButton";
+import { education, experience, profile, projects, skills } from "@/content/config";
+import { formatMonth } from "@/lib/vfs/build";
 
-|__________________________________________________________|
-| Skills                                                   |
-|----------------------------------------------------------|
-| JavaScript | TypeScript | Rust                           |
-| Solidity   | YAML       | Python                         |
-| C++        | C          | SQL                            |
-| Pug        | Git        | Docker                         |
-| AWS        | VS Code    | Tailwind CSS                   |
-| Firebase   | Hardhat    | Next.js                        |
-| MERN       | Jest       | Chainlink                      |
-| Starknet   | Prisma     | Cairo                          |
-| JSON       | PostgreSQL | GitHub Actions                 |
-|__________________________________________________________|
-
-|__________________________________________________________|
-| Experience                                               |
-|----------------------------------------------------------|
-| Backend Engineer Intern at Hashstack                     |
-| - Streamlined smart contract integration by developing   |
-|   an internal SDK tool                                   |
-| - Developed necessary APIs and integrated various DeFi   |
-|   concepts                                               |
-| - Managed CI/CD pipelines and GitHub Actions for AWS     |
-|   deployments                                            |
-| - Handled 3rd party DeFi integrations on Starknet L2 and |
-|   Ethereum L1                                            |
-| - Developed backend relayer to facilitate cost-effective |
-|   DeFi investments from Starknet to Layer 1, reducing    |
-|   transaction costs                                      |
-|__________________________________________________________|
-
-|__________________________________________________________|
-| Education                                                |
-|----------------------------------------------------------|
-| B.Tech. in Information Science and Engineering           |
-| - CGPA: 8.4/10.0                                         |
-| BMS College of Engineering, Bangalore                    |
-| - 2021 - 2025                                            |
-|----------------------------------------------------------|
-| Pre-University Education                                 |
-| - Score: 93%                                             |
-| DAV Public School, Chaibasa                              |
-| - 2019 - 2021                                            |
-|__________________________________________________________|
-
-|__________________________________________________________|
-| Projects                                                 |
-|----------------------------------------------------------|
-| web3-dream11                                             |
-| - Implemented a live auction for players on the          |
-|   blockchain network                                     |
-| - Developed external adapters to fetch data from         |
-|   decentralized oracle networks, like Chainlink, to      |
-|   rank players                                           |
-| - Automated function calls using custom logic with the   |
-|   help of Chainlink automation                           |
-|----------------------------------------------------------|
-| CrossChain-Hub                                           |
-| - Developed a protocol to establish secure and efficient |
-|   communication channels between different blockchain    |
-|   networks using simple API hooks                        |
-| - Created smart contracts for sender and receiver        |
-|   functions across multiple chains using Chainlink CCIP  |
-| - Architected an API using Node.js to encode user        |
-|   payloads and transmit them securely across chains      |
-|__________________________________________________________|
-
-|__________________________________________________________|
-| Hackathons                                               |
-|----------------------------------------------------------|
-| Chainlink Hackathon - RaCoTo (Rainforest Proof-of-       |
-| Conservation Tokens)                                     |
-| - Leveraged Chainlink functions for real-time satellite  |
-|   image analysis for off-chain computation optimizing    |
-|   gas costs and instant withdrawal of Rainforest Proof-  |
-|   of-Conservation tokens (ERC20)                         |
-| - Applied Chainlink proof-of-reserves to rainforest      |
-|   preservation incentivizing rainforest owners           |
-|__________________________________________________________|
-
-|__________________________________________________________|
-| Open Source                                              |
-|----------------------------------------------------------|
-| Google Summer of Code (GSoC) Participant                 |
-| - Developed, tested, and deployed an oracle adapter for  |
-|   Djed, a crypto-backed algorithmic stablecoin on        |
-|   EVM-based networks                                     |
-| - Worked on Djed Shu, creating a converter to adapt 1-   |
-|   price oracles to 2-price oracles by tracking maximum   |
-|   and minimum prices over 24 hours                       |
-|__________________________________________________________|
-
-|__________________________________________________________|
-| Achievements                                             |
-|----------------------------------------------------------|
-| - Google Summer of Code (GSoC) Participant               |
-| - Academic excellence (93%) in Pre-University Education  |
-| - Open source contributor                                |
-|__________________________________________________________|
-
-|__________________________________________________________|
-| Contact                                                  |
-|----------------------------------------------------------|
-| - Email: agrawalyogesh5047@gmail.com                     |
-| - LinkedIn: linkedin.com/in/yogesh0509                   |
-| - GitHub: github.com/yogesh0509                          |
-| - Portfolio: portfolio-yogesh0509.vercel.app             |
-|__________________________________________________________|`
-                    }
-                </pre>
-            </div>
-        </div>
-    );
+export const metadata: Metadata = {
+  title: "Résumé",
+  description: `${profile.name}: ${profile.headline}`,
+  alternates: { canonical: "/resume" },
 };
+
+const range = (from: string, to: string | null) => `${formatMonth(from)} to ${to ? formatMonth(to) : "present"}`;
+
+/**
+ * The résumé, built from the same configuration as the rest of the site (and as resume.json),
+ * so the two cannot drift apart. The phone number on my LinkedIn export is deliberately not here.
+ */
+export default function ResumePage() {
+  return (
+    <article id="resume-print" className="resume mx-auto max-w-3xl px-6 py-8 leading-relaxed">
+      <div className="mb-6 flex flex-wrap items-center gap-3 print:hidden">
+        <PrintButton />
+        {profile.resumeUrl && (
+          <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="text-sm underline underline-offset-2">
+            Download the PDF
+          </a>
+        )}
+        <Link href="/resume.json" className="text-sm underline underline-offset-2">
+          View as JSON Resume
+        </Link>
+      </div>
+
+      <header>
+        <h1 className="text-3xl font-semibold">{profile.name}</h1>
+        <p className="mt-1">{profile.headline}</p>
+        <p className="mt-2 text-sm">
+          {profile.location} · <a href={`mailto:${profile.email}`}>{profile.email}</a> · <a href={profile.github}>github.com/{profile.handle}</a> ·{" "}
+          <a href={profile.linkedin}>linkedin.com/in/{profile.handle}</a>
+        </p>
+      </header>
+
+      <section aria-labelledby="r-summary">
+        <h2 id="r-summary">Summary</h2>
+        <p>{profile.summary}</p>
+      </section>
+
+      <section aria-labelledby="r-experience">
+        <h2 id="r-experience">Experience</h2>
+        {experience.map((entry) => (
+          <div key={entry.id} className="mb-4 break-inside-avoid">
+            <h3>
+              {entry.org}, {entry.place}
+            </h3>
+            {entry.roles.map((role) => (
+              <p key={role.from} className="text-sm">
+                <strong>{role.title}</strong>, {range(role.from, role.to)}
+              </p>
+            ))}
+            {entry.bullets.length > 0 && (
+              <ul>
+                {entry.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </section>
+
+      <section aria-labelledby="r-work">
+        <h2 id="r-work">Selected work</h2>
+        <ul>
+          {projects.map((project) => (
+            <li key={project.slug}>
+              <strong>{project.title}</strong> ({project.period}): {project.tagline}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="r-education">
+        <h2 id="r-education">Education</h2>
+        {education.map((e) => (
+          <p key={e.school}>
+            {e.degree}, {e.school}, {e.place}, {e.from} to {e.to}
+          </p>
+        ))}
+      </section>
+
+      <section aria-labelledby="r-skills">
+        <h2 id="r-skills">Skills</h2>
+        <ul>
+          {skills.map((group) => (
+            <li key={group.group}>
+              <strong>{group.group}:</strong> {group.items.join(", ")}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </article>
+  );
+}
